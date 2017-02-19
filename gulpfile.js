@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
+var watchLess = require('gulp-watch-less');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
@@ -27,6 +28,14 @@ gulp.task('less', function() {
             stream: true
         }))
 });
+
+//Watch Less file for changes
+// gulp.task('default', function () {
+//     return gulp.src('less/agency.less')
+//         .pipe(watchLess('less/agency.less'))
+//         .pipe(less())
+//         .pipe(gulp.dest('css'))
+// })
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
@@ -84,7 +93,7 @@ gulp.task('browserSync', function() {
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
-    gulp.watch('less/*.less', ['less']);
+    gulp.watch('less/*.less', browserSync.reload, ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
