@@ -22,19 +22,11 @@ gulp.task('less', function() {
     return gulp.src('less/agency.less')
         .pipe(less())
         .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('agency.css'))
         .pipe(browserSync.reload({
             stream: true
         }))
 });
-
-//Watch Less file for changes
-// gulp.task('default', function () {
-//     return gulp.src('less/agency.less')
-//         .pipe(watchLess('less/agency.less'))
-//         .pipe(less())
-//         .pipe(gulp.dest('css'))
-// })
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
