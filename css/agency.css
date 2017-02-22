@@ -14,11 +14,18 @@ body {
   color: #fbba69;
 }
 p {
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 20px;
+  line-height: 1;
 }
 p.large {
   font-size: 16px;
+}
+
+.contactInfo {
+  background-color: white;
+  box-shadow: 10px 10px black;
+  border-radius: 15px;
+  padding-top: 5px
 }
 a,
 a:hover,
