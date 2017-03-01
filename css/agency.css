@@ -58,6 +58,11 @@ h6 {
 .img-centered {
   margin: 0 auto;
 }
+
+.item carousel-inner {
+  width: auto;
+  height: 500px;
+}
 .bg-light-gray {
   background-color: #eeeeee;
 }
