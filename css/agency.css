@@ -58,6 +58,11 @@ h6 {
 .img-centered {
   margin: 0 auto;
 }
+
+.carousel-inner {
+  width: auto;
+  height: 500px;
+}
 .bg-light-gray {
   background-color: #eeeeee;
 }
@@ -761,3 +766,4 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #fbba69;
 }
+
